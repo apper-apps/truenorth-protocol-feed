@@ -5,20 +5,25 @@ import { motion } from 'framer-motion'
 import CompassPage from '@/components/pages/CompassPage'
 
 function App() {
-  return (
+return (
     <Router>
-      <div className="min-h-screen bg-background topo-pattern">
+      <div className="min-h-screen bg-background liquid-glass-pattern relative overflow-hidden">
+        {/* Liquid Glass Background Layer */}
+        <div className="absolute inset-0 bg-gradient-to-br from-glass-primary-50 via-transparent to-glass-primary-100 pointer-events-none" />
+        <div className="absolute inset-0 bg-liquid-gradient opacity-30 pointer-events-none" />
+        
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="min-h-screen"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="min-h-screen relative z-10"
         >
           <Routes>
             <Route path="/" element={<CompassPage />} />
           </Routes>
         </motion.div>
-<ToastContainer
+        
+        <ToastContainer
           position="top-center"
           autoClose={3000}
           hideProgressBar={false}
@@ -36,7 +41,7 @@ function App() {
             right: '1rem',
             width: 'auto'
           }}
-          toastClassName="mobile-toast"
+          toastClassName="liquid-glass-toast"
         />
       </div>
     </Router>

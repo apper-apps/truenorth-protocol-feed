@@ -14,7 +14,7 @@ const Error = ({
       animate={{ opacity: 1, y: 0 }}
       className={`flex flex-col items-center justify-center space-y-6 p-8 ${className}`}
     >
-      <div className="w-20 h-20 bg-error/20 rounded-full flex items-center justify-center">
+<div className="w-20 h-20 bg-error/20 glass-morphism rounded-full flex items-center justify-center shadow-glass">
         <ApperIcon name="AlertTriangle" className="w-10 h-10 text-error" />
       </div>
       

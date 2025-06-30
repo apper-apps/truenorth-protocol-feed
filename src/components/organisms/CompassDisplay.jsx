@@ -101,54 +101,71 @@ const CompassDisplay = ({ className = '' }) => {
   }
 
 return (
-    <div className={`space-y-4 sm:space-y-6 ${className}`}>
-      {/* Header */}
-      <div className="flex items-center justify-between p-mobile sm:p-4">
-        <div className="flex-1 min-w-0">
-          <h1 className="text-xl sm:text-2xl font-display font-bold text-white truncate">
-            TrueNorth
-          </h1>
-          <p className="text-xs sm:text-sm text-gray-400">Precision Compass</p>
-        </div>
-        <div className="flex space-x-2 ml-4">
-          <Button
-            variant="outline"
-            size="sm"
-            icon="Settings"
-            onClick={() => setShowSettings(!showSettings)}
-            className="min-h-touch min-w-touch"
-          />
-          <Button
-            variant="outline"
-            size="sm"
-            icon="Compass"
-            onClick={() => setShowCalibration(true)}
-            className="min-h-touch min-w-touch"
-          />
+    <div className={`space-y-6 ${className}`}>
+      {/* Liquid Glass Header */}
+      <div className="glass-morphism rounded-glass-lg p-4 sm:p-6 shadow-glass">
+        <div className="flex items-center justify-between">
+          <div className="flex-1 min-w-0">
+            <motion.h1 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-2xl sm:text-3xl font-display font-bold text-white truncate"
+            >
+              TrueNorth
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-sm text-glass-200 mt-1"
+            >
+              Liquid Glass Precision Compass
+            </motion.p>
+          </div>
+          <div className="flex space-x-3 ml-4">
+            <Button
+              variant="outline"
+              size="sm"
+              icon="Settings"
+              onClick={() => setShowSettings(!showSettings)}
+              className="min-h-touch min-w-touch glass-button"
+            />
+            <Button
+              variant="outline"
+              size="sm"
+              icon="Compass"
+              onClick={() => setShowCalibration(true)}
+              className="min-h-touch min-w-touch glass-button"
+            />
+          </div>
         </div>
       </div>
 
-      {/* Sensor Status */}
-{/* Sensor Status */}
-      <div className="px-mobile sm:px-4">
+      {/* Liquid Glass Sensor Status */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
         <SensorStatus
           isSupported={isSupported}
           isActive={isActive}
           accuracy={accuracy}
           hasPermission={hasPermission}
         />
-      </div>
+      </motion.div>
 
-      {/* Settings Panel */}
+      {/* Liquid Glass Settings Panel */}
       {showSettings && (
         <motion.div
-initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          className="px-mobile sm:px-4"
+          initial={{ opacity: 0, height: 0, scale: 0.95 }}
+          animate={{ opacity: 1, height: 'auto', scale: 1 }}
+          exit={{ opacity: 0, height: 0, scale: 0.95 }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <div className="bg-surface rounded-lg p-mobile sm:p-4 border border-primary/30 space-y-4">
-            <h3 className="text-base sm:text-lg font-display font-bold text-white">Settings</h3>
+          <div className="glass-morphism-strong rounded-glass-lg p-4 sm:p-6 shadow-glass-lg space-y-4">
+            <h3 className="text-lg sm:text-xl font-display font-bold text-white">Settings</h3>
             
             <Slider
               label="Magnetic Declination"
@@ -160,52 +177,69 @@ initial={{ opacity: 0, height: 0 }}
               unit="°"
             />
             
-            <div className="text-xs text-gray-400">
+            <div className="text-sm text-glass-300 bg-glass-dark-100 rounded-lg p-3 backdrop-blur-sm">
               Adjust for your location's magnetic declination to get true north readings.
             </div>
           </div>
         </motion.div>
       )}
-{/* Heading Display */}
-      <div className="px-mobile sm:px-4">
+
+      {/* Liquid Glass Heading Display */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
         <HeadingDisplay
           heading={heading}
           magneticHeading={magneticHeading}
           trueHeading={trueHeading + declination}
         />
-      </div>
+      </motion.div>
 
-      {/* Compass Rose */}
-      <div className="flex justify-center px-mobile sm:px-4">
+      {/* Liquid Glass Compass Rose */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="flex justify-center"
+      >
         <CompassRose
           heading={heading}
           accuracy={accuracy}
         />
-      </div>
+      </motion.div>
 
-      {/* Quick Actions */}
-      <div className="px-mobile sm:px-4 pb-8">
-        <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
-<Button
-            variant="outline"
-            size="sm"
-            icon="RotateCcw"
-            onClick={() => setShowCalibration(true)}
-            className="w-full sm:w-auto min-h-button"
-          >
-            Calibrate
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            icon="Bookmark"
-            onClick={() => toast.info("Bearing saved!")}
-            className="w-full sm:w-auto min-h-button"
-          >
-            Save Bearing
-          </Button>
+      {/* Liquid Glass Quick Actions */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+        className="pb-8"
+      >
+        <div className="glass-morphism rounded-glass-lg p-4 shadow-glass">
+          <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+            <Button
+              variant="outline"
+              size="sm"
+              icon="RotateCcw"
+              onClick={() => setShowCalibration(true)}
+              className="w-full sm:w-auto min-h-button glass-button"
+            >
+              Calibrate
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              icon="Bookmark"
+              onClick={() => toast.info("Bearing saved!")}
+              className="w-full sm:w-auto min-h-button glass-button"
+            >
+              Save Bearing
+            </Button>
+          </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Calibration Panel */}
       <CalibrationPanel

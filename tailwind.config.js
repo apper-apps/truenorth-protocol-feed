@@ -4,7 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-theme: {
+  theme: {
     extend: {
       colors: {
         primary: '#2C5F2D',
@@ -16,6 +16,43 @@ theme: {
         warning: '#FFC107',
         error: '#F44336',
         info: '#2196F3',
+        // Liquid Glass Color Palette
+        glass: {
+          50: 'rgba(255, 255, 255, 0.05)',
+          100: 'rgba(255, 255, 255, 0.1)',
+          200: 'rgba(255, 255, 255, 0.15)',
+          300: 'rgba(255, 255, 255, 0.2)',
+          400: 'rgba(255, 255, 255, 0.25)',
+          500: 'rgba(255, 255, 255, 0.3)',
+          600: 'rgba(255, 255, 255, 0.35)',
+          700: 'rgba(255, 255, 255, 0.4)',
+          800: 'rgba(255, 255, 255, 0.45)',
+          900: 'rgba(255, 255, 255, 0.5)',
+        },
+        'glass-dark': {
+          50: 'rgba(0, 0, 0, 0.05)',
+          100: 'rgba(0, 0, 0, 0.1)',
+          200: 'rgba(0, 0, 0, 0.15)',
+          300: 'rgba(0, 0, 0, 0.2)',
+          400: 'rgba(0, 0, 0, 0.25)',
+          500: 'rgba(0, 0, 0, 0.3)',
+          600: 'rgba(0, 0, 0, 0.35)',
+          700: 'rgba(0, 0, 0, 0.4)',
+          800: 'rgba(0, 0, 0, 0.45)',
+          900: 'rgba(0, 0, 0, 0.5)',
+        },
+        'glass-primary': {
+          50: 'rgba(44, 95, 45, 0.05)',
+          100: 'rgba(44, 95, 45, 0.1)',
+          200: 'rgba(44, 95, 45, 0.15)',
+          300: 'rgba(44, 95, 45, 0.2)',
+          400: 'rgba(44, 95, 45, 0.25)',
+          500: 'rgba(44, 95, 45, 0.3)',
+          600: 'rgba(44, 95, 45, 0.35)',
+          700: 'rgba(44, 95, 45, 0.4)',
+          800: 'rgba(44, 95, 45, 0.45)',
+          900: 'rgba(44, 95, 45, 0.5)',
+        },
       },
       fontFamily: {
         'display': ['Bebas Neue', 'sans-serif'],
@@ -55,13 +92,50 @@ theme: {
       screens: {
         'xs': '475px',
         'touch': '768px',
+        'glass': '1024px',
       },
       animation: {
         'spin-smooth': 'spin 1s linear infinite',
         'pulse-gentle': 'pulse 2s ease-in-out infinite',
+        'glass-float': 'glassFloat 6s ease-in-out infinite',
+        'liquid-glow': 'liquidGlow 3s ease-in-out infinite alternate',
+      },
+      keyframes: {
+        glassFloat: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-10px) rotate(2deg)' },
+        },
+        liquidGlow: {
+          '0%': { boxShadow: '0 0 20px rgba(44, 95, 45, 0.3), inset 0 0 20px rgba(44, 95, 45, 0.1)' },
+          '100%': { boxShadow: '0 0 40px rgba(44, 95, 45, 0.5), inset 0 0 30px rgba(44, 95, 45, 0.2)' },
+        },
       },
       backdropBlur: {
         'xs': '2px',
+        'sm': '4px',
+        'md': '8px',
+        'lg': '12px',
+        'xl': '16px',
+        '2xl': '24px',
+        '3xl': '32px',
+      },
+      boxShadow: {
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.1)',
+        'glass-lg': '0 12px 40px rgba(0, 0, 0, 0.15)',
+        'glass-xl': '0 20px 60px rgba(0, 0, 0, 0.2)',
+        'glass-inner': 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+        'glass-glow': '0 0 20px rgba(44, 95, 45, 0.3), inset 0 0 20px rgba(44, 95, 45, 0.1)',
+        'liquid-glow': '0 0 40px rgba(44, 95, 45, 0.4), inset 0 0 30px rgba(44, 95, 45, 0.15)',
+      },
+      borderRadius: {
+        'glass': '16px',
+        'glass-lg': '20px',
+        'glass-xl': '24px',
+      },
+      backgroundImage: {
+        'glass-gradient': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        'glass-primary': 'linear-gradient(135deg, rgba(44, 95, 45, 0.2) 0%, rgba(44, 95, 45, 0.1) 100%)',
+        'liquid-gradient': 'linear-gradient(135deg, rgba(44, 95, 45, 0.15) 0%, rgba(151, 188, 98, 0.1) 50%, rgba(255, 107, 53, 0.05) 100%)',
       },
     },
   },

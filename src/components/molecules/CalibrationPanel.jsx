@@ -61,15 +61,15 @@ const CalibrationPanel = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
 exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-mobile sm:p-4"
+className="fixed inset-0 bg-black/60 backdrop-blur-lg flex items-center justify-center z-50 p-mobile sm:p-4"
           onClick={onClose}
         >
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0, y: 20 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.9, opacity: 0, y: 20 }}
             onClick={(e) => e.stopPropagation()}
-            className={`bg-surface rounded-xl p-4 sm:p-6 border-2 border-primary max-w-mobile-safe sm:max-w-md w-full max-h-[90vh] overflow-y-auto ${className}`}
+            className={`glass-morphism-strong rounded-glass-xl p-6 sm:p-8 border border-glass-300 max-w-mobile-safe sm:max-w-md w-full max-h-[90vh] overflow-y-auto shadow-glass-xl ${className}`}
           >
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-display font-bold text-white">
@@ -96,7 +96,7 @@ exit={{ opacity: 0 }}
 
                 <div className="space-y-4">
                   {calibrationSteps.map((step, index) => (
-                    <div key={index} className="flex items-center space-x-3 p-3 bg-background rounded-lg">
+<div key={index} className="flex items-center space-x-3 p-4 glass-morphism rounded-glass border border-glass-200">
                       <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                         <ApperIcon name={step.icon} className="w-4 h-4 text-primary" />
                       </div>
@@ -136,7 +136,7 @@ exit={{ opacity: 0 }}
                     <span className="text-gray-400">Progress</span>
                     <span className="text-white">{Math.round(progress)}%</span>
                   </div>
-                  <div className="w-full bg-background rounded-full h-2">
+<div className="w-full glass-morphism rounded-full h-3 border border-glass-200">
                     <motion.div
                       className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full"
                       animate={{ width: `${progress}%` }}

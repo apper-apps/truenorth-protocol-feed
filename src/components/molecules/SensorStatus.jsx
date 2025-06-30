@@ -40,7 +40,7 @@ const SensorStatus = ({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
 animate={{ opacity: 1, y: 0 }}
-      className={`flex items-center space-x-3 p-3 sm:p-4 rounded-lg bg-surface border border-primary/30 ${className}`}
+className={`flex items-center space-x-4 p-4 sm:p-5 glass-morphism rounded-glass-lg border border-glass-200 shadow-glass ${className}`}
     >
       <motion.div
         animate={{

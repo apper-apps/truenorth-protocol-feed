@@ -46,8 +46,8 @@ const CompassRose = ({ heading = 0, accuracy = 0, className = '' }) => {
 return (
     <div className={`relative ${className}`}>
       {/* Compass Ring */}
-      <div className="relative w-compass-mobile h-compass-mobile sm:w-80 sm:h-80 mx-auto">
-        <div className="absolute inset-0 rounded-full border-2 sm:border-4 border-primary compass-ring bg-gradient-to-br from-surface to-gray-900">
+<div className="relative w-compass-mobile h-compass-mobile sm:w-80 sm:h-80 mx-auto">
+        <div className="absolute inset-0 rounded-full border-2 sm:border-4 border-glass-primary-400 compass-ring glass-morphism-strong bg-gradient-to-br from-glass-primary-100 to-glass-primary-200">
           
           {/* Degree Ticks */}
           <div className="absolute inset-4 rounded-full">
