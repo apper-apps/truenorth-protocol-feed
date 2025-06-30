@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "heading": 0,
+    "accuracy": 5,
+    "timestamp": "2024-01-15T10:00:00Z",
+    "magneticHeading": 0,
+    "trueHeading": 2.5
+  },
+  {
+    "Id": 2,
+    "heading": 45,
+    "accuracy": 3,
+    "timestamp": "2024-01-15T10:01:00Z",
+    "magneticHeading": 45,
+    "trueHeading": 47.5
+  },
+  {
+    "Id": 3,
+    "heading": 90,
+    "accuracy": 4,
+    "timestamp": "2024-01-15T10:02:00Z",
+    "magneticHeading": 90,
+    "trueHeading": 92.5
+  },
+  {
+    "Id": 4,
+    "heading": 135,
+    "accuracy": 6,
+    "timestamp": "2024-01-15T10:03:00Z",
+    "magneticHeading": 135,
+    "trueHeading": 137.5
+  },
+  {
+    "Id": 5,
+    "heading": 180,
+    "accuracy": 3,
+    "timestamp": "2024-01-15T10:04:00Z",
+    "magneticHeading": 180,
+    "trueHeading": 182.5
+  }
+]

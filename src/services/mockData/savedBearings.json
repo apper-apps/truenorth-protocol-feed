@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "bearing": 0,
+    "label": "True North",
+    "timestamp": "2024-01-15T09:00:00Z"
+  },
+  {
+    "Id": 2,
+    "bearing": 45,
+    "label": "Northeast Ridge",
+    "timestamp": "2024-01-15T09:15:00Z"
+  },
+  {
+    "Id": 3,
+    "bearing": 90,
+    "label": "East Valley",
+    "timestamp": "2024-01-15T09:30:00Z"
+  },
+  {
+    "Id": 4,
+    "bearing": 180,
+    "label": "Base Camp",
+    "timestamp": "2024-01-15T09:45:00Z"
+  },
+  {
+    "Id": 5,
+    "bearing": 270,
+    "label": "West Trail",
+    "timestamp": "2024-01-15T10:00:00Z"
+  }
+]

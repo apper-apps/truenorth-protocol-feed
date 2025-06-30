@@ -1,0 +1,32 @@
+[
+  {
+    "Id": 1,
+    "isCalibrated": true,
+    "lastCalibration": "2024-01-15T08:00:00Z",
+    "declination": 2.5
+  },
+  {
+    "Id": 2,
+    "isCalibrated": false,
+    "lastCalibration": "2024-01-10T15:30:00Z",
+    "declination": 0
+  },
+  {
+    "Id": 3,
+    "isCalibrated": true,
+    "lastCalibration": "2024-01-14T12:00:00Z",
+    "declination": -1.2
+  },
+  {
+    "Id": 4,
+    "isCalibrated": true,
+    "lastCalibration": "2024-01-15T07:45:00Z",
+    "declination": 3.8
+  },
+  {
+    "Id": 5,
+    "isCalibrated": false,
+    "lastCalibration": "2024-01-08T16:20:00Z",
+    "declination": 0
+  }
+]

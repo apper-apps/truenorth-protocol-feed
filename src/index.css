@@ -1,0 +1,169 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #0D0D0D;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2C5F2D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #97BC62;
+}
+
+/* Topographic pattern */
+.topo-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(44, 95, 45, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(44, 95, 45, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(44, 95, 45, 0.05) 0%, transparent 50%);
+}
+
+/* Compass needle animation */
+.compass-needle {
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+/* Toast customization */
+.Toastify__toast-container {
+  top: 20px;
+  right: 20px;
+  width: auto;
+  max-width: 400px;
+}
+
+.Toastify__toast {
+  background-color: #1A1A1A;
+  border: 1px solid #2C5F2D;
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  min-height: auto;
+}
+
+.Toastify__toast--success {
+  border-color: #4CAF50;
+}
+
+.Toastify__toast--warning {
+  border-color: #FFC107;
+}
+
+.Toastify__toast--error {
+  border-color: #F44336;
+}
+
+.Toastify__toast--info {
+  border-color: #2196F3;
+}
+
+.Toastify__progress-bar {
+  background: linear-gradient(90deg, #2C5F2D, #97BC62);
+}
+
+/* Compass ring glow */
+.compass-ring {
+  box-shadow: 
+    0 0 20px rgba(44, 95, 45, 0.3),
+    inset 0 0 20px rgba(44, 95, 45, 0.1);
+}
+
+/* Calibration animation */
+@keyframes figure-eight {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  12.5% { transform: translate(30px, 0) rotate(45deg); }
+  25% { transform: translate(30px, 30px) rotate(90deg); }
+  37.5% { transform: translate(0, 30px) rotate(135deg); }
+  50% { transform: translate(0, 0) rotate(180deg); }
+  62.5% { transform: translate(-30px, 0) rotate(225deg); }
+  75% { transform: translate(-30px, -30px) rotate(270deg); }
+  87.5% { transform: translate(0, -30px) rotate(315deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+.figure-eight {
+  animation: figure-eight 3s ease-in-out infinite;
+}
+
+/* Sensor status indicators */
+.sensor-status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.sensor-status-dot.active {
+  background-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.sensor-status-dot.inactive {
+  background-color: #F44336;
+  box-shadow: 0 0 10px rgba(244, 67, 54, 0.5);
+}
+
+.sensor-status-dot.warning {
+  background-color: #FFC107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* Custom range slider */
+.range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #1A1A1A;
+  outline: none;
+  border: 1px solid #2C5F2D;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2C5F2D, #97BC62);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2C5F2D, #97BC62);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
