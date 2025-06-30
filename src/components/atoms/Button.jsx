@@ -21,13 +21,11 @@ const Button = ({
     danger: 'bg-gradient-to-r from-error to-red-600 text-white border-error hover:from-red-600 hover:to-error',
     success: 'bg-gradient-to-r from-success to-green-600 text-white border-success hover:from-green-600 hover:to-success'
   }
-
-  const sizes = {
-    sm: 'px-3 py-2 text-sm',
-    md: 'px-4 py-3 text-base',
-    lg: 'px-6 py-4 text-lg'
+const sizes = {
+    sm: 'px-3 py-2 sm:px-4 sm:py-3 text-sm sm:text-base min-h-touch',
+    md: 'px-4 py-3 sm:px-6 sm:py-4 text-base sm:text-lg min-h-button',
+    lg: 'px-6 py-4 sm:px-8 sm:py-5 text-lg sm:text-xl min-h-button'
   }
-
   return (
     <motion.button
       whileHover={{ scale: disabled ? 1 : 1.02 }}

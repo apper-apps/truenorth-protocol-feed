@@ -7,10 +7,10 @@ const CompassPage = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+transition={{ duration: 0.5 }}
       className="min-h-screen bg-background"
     >
-      <div className="max-w-md mx-auto">
+      <div className="w-full max-w-mobile-safe sm:max-w-md mx-auto px-4 sm:px-0">
         <CompassDisplay />
       </div>
     </motion.div>

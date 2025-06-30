@@ -100,32 +100,37 @@ const CompassDisplay = ({ className = '' }) => {
     )
   }
 
-  return (
-    <div className={`space-y-6 ${className}`}>
+return (
+    <div className={`space-y-4 sm:space-y-6 ${className}`}>
       {/* Header */}
-      <div className="flex items-center justify-between p-4">
-        <div>
-          <h1 className="text-2xl font-display font-bold text-white">TrueNorth</h1>
-          <p className="text-sm text-gray-400">Precision Compass</p>
+      <div className="flex items-center justify-between p-mobile sm:p-4">
+        <div className="flex-1 min-w-0">
+          <h1 className="text-xl sm:text-2xl font-display font-bold text-white truncate">
+            TrueNorth
+          </h1>
+          <p className="text-xs sm:text-sm text-gray-400">Precision Compass</p>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex space-x-2 ml-4">
           <Button
             variant="outline"
             size="sm"
             icon="Settings"
             onClick={() => setShowSettings(!showSettings)}
+            className="min-h-touch min-w-touch"
           />
           <Button
             variant="outline"
             size="sm"
             icon="Compass"
             onClick={() => setShowCalibration(true)}
+            className="min-h-touch min-w-touch"
           />
         </div>
       </div>
 
       {/* Sensor Status */}
-      <div className="px-4">
+{/* Sensor Status */}
+      <div className="px-mobile sm:px-4">
         <SensorStatus
           isSupported={isSupported}
           isActive={isActive}
@@ -137,13 +142,13 @@ const CompassDisplay = ({ className = '' }) => {
       {/* Settings Panel */}
       {showSettings && (
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
+initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
-          className="px-4"
+          className="px-mobile sm:px-4"
         >
-          <div className="bg-surface rounded-lg p-4 border border-primary/30 space-y-4">
-            <h3 className="text-lg font-display font-bold text-white">Settings</h3>
+          <div className="bg-surface rounded-lg p-mobile sm:p-4 border border-primary/30 space-y-4">
+            <h3 className="text-base sm:text-lg font-display font-bold text-white">Settings</h3>
             
             <Slider
               label="Magnetic Declination"
@@ -161,9 +166,8 @@ const CompassDisplay = ({ className = '' }) => {
           </div>
         </motion.div>
       )}
-
-      {/* Heading Display */}
-      <div className="px-4">
+{/* Heading Display */}
+      <div className="px-mobile sm:px-4">
         <HeadingDisplay
           heading={heading}
           magneticHeading={magneticHeading}
@@ -172,7 +176,7 @@ const CompassDisplay = ({ className = '' }) => {
       </div>
 
       {/* Compass Rose */}
-      <div className="flex justify-center px-4">
+      <div className="flex justify-center px-mobile sm:px-4">
         <CompassRose
           heading={heading}
           accuracy={accuracy}
@@ -180,13 +184,14 @@ const CompassDisplay = ({ className = '' }) => {
       </div>
 
       {/* Quick Actions */}
-      <div className="px-4 pb-8">
-        <div className="flex justify-center space-x-4">
-          <Button
+      <div className="px-mobile sm:px-4 pb-8">
+        <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-4">
+<Button
             variant="outline"
             size="sm"
             icon="RotateCcw"
             onClick={() => setShowCalibration(true)}
+            className="w-full sm:w-auto min-h-button"
           >
             Calibrate
           </Button>
@@ -195,6 +200,7 @@ const CompassDisplay = ({ className = '' }) => {
             size="sm"
             icon="Bookmark"
             onClick={() => toast.info("Bearing saved!")}
+            className="w-full sm:w-auto min-h-button"
           >
             Save Bearing
           </Button>

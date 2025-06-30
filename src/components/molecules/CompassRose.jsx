@@ -43,11 +43,11 @@ const CompassRose = ({ heading = 0, accuracy = 0, className = '' }) => {
     return ticks
   }
 
-  return (
+return (
     <div className={`relative ${className}`}>
       {/* Compass Ring */}
-      <div className="relative w-80 h-80 mx-auto">
-        <div className="absolute inset-0 rounded-full border-4 border-primary compass-ring bg-gradient-to-br from-surface to-gray-900">
+      <div className="relative w-compass-mobile h-compass-mobile sm:w-80 sm:h-80 mx-auto">
+        <div className="absolute inset-0 rounded-full border-2 sm:border-4 border-primary compass-ring bg-gradient-to-br from-surface to-gray-900">
           
           {/* Degree Ticks */}
           <div className="absolute inset-4 rounded-full">
@@ -63,13 +63,13 @@ const CompassRose = ({ heading = 0, accuracy = 0, className = '' }) => {
                 transform: `translateX(-50%) rotate(${angle}deg)`,
                 height: '100%'
               }}
-            >
+>
               <div
                 className={`
-                  font-display text-2xl font-bold ${color}
+                  font-display text-xl sm:text-2xl font-bold ${color}
                   transform rotate(-${angle}deg)
                   flex items-center justify-center
-                  w-8 h-8
+                  w-6 h-6 sm:w-8 sm:h-8
                 `}
                 style={{ transform: `rotate(-${angle}deg)` }}
               >
@@ -150,14 +150,14 @@ const CompassRose = ({ heading = 0, accuracy = 0, className = '' }) => {
           )}
         </div>
 
-        {/* Degree Markers */}
+{/* Degree Markers */}
         <div className="absolute inset-0 flex items-center justify-center">
           {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((degree) => (
             <div
               key={degree}
-              className="absolute text-xs font-body text-gray-400 select-none"
+              className="absolute text-xs sm:text-sm font-body text-gray-400 select-none"
               style={{
-                transform: `rotate(${degree}deg) translateY(-150px) rotate(-${degree}deg)`,
+                transform: `rotate(${degree}deg) translateY(-130px) sm:translateY(-150px) rotate(-${degree}deg)`,
                 transformOrigin: 'center'
               }}
             >

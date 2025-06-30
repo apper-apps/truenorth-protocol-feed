@@ -13,14 +13,14 @@ const Slider = ({
   className = '',
   ...props
 }) => {
-  return (
+return (
     <div className={`space-y-3 ${className}`}>
       {label && (
-        <div className="flex justify-between items-center">
-          <label className="block text-sm font-medium text-gray-300">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center space-y-1 sm:space-y-0">
+          <label className="block text-sm sm:text-base font-medium text-gray-300">
             {label}
           </label>
-          <span className="text-sm font-bold text-secondary">
+          <span className="text-sm sm:text-base font-bold text-secondary">
             {value}{unit}
           </span>
         </div>
@@ -41,8 +41,7 @@ const Slider = ({
           `}
           {...props}
         />
-        
-        <div className="flex justify-between text-xs text-gray-500 mt-1">
+<div className="flex justify-between text-xs sm:text-sm text-gray-500 mt-2">
           <span>{min}{unit}</span>
           <span>{max}{unit}</span>
         </div>

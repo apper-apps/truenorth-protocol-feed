@@ -14,10 +14,10 @@ const Input = ({
   className = '',
   ...props
 }) => {
-  return (
+return (
     <div className={`space-y-2 ${className}`}>
       {label && (
-        <label className="block text-sm font-medium text-gray-300 mb-2">
+        <label className="block text-sm sm:text-base font-medium text-gray-300 mb-2">
           {label}
         </label>
       )}
@@ -35,12 +35,12 @@ const Input = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
-          disabled={disabled}
+disabled={disabled}
           className={`
-            w-full px-3 py-3 bg-surface border-2 rounded-lg text-white
+            w-full px-3 py-3 sm:py-4 bg-surface border-2 rounded-lg text-white
             placeholder-gray-400 focus:outline-none focus:border-primary
-            transition-all duration-200
-            ${icon ? 'pl-10' : ''}
+            transition-all duration-200 text-base min-h-touch
+            ${icon ? 'pl-10 sm:pl-12' : ''}
             ${error ? 'border-error' : 'border-gray-600'}
             ${disabled ? 'opacity-50 cursor-not-allowed' : ''}
           `}

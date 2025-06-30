@@ -18,9 +18,8 @@ function App() {
             <Route path="/" element={<CompassPage />} />
           </Routes>
         </motion.div>
-        
-        <ToastContainer
-          position="top-right"
+<ToastContainer
+          position="top-center"
           autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
@@ -30,7 +29,14 @@ function App() {
           draggable
           pauseOnHover
           theme="dark"
-          style={{ zIndex: 9999 }}
+          style={{ 
+            zIndex: 9999,
+            top: '1rem',
+            left: '1rem',
+            right: '1rem',
+            width: 'auto'
+          }}
+          toastClassName="mobile-toast"
         />
       </div>
     </Router>
